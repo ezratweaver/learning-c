@@ -8,4 +8,9 @@ int main(void) {
     {
         printf("y is greater than x");
     }
+    else
+    {
+        printf("y is not greater than x");
+    }
 }
+
