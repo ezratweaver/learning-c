@@ -1,15 +1,19 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-char name[] = "Ezra";
-char grade = 'C';
-int age = 17;
-float gpa = 4.0;
+const char NAME[] = "Ezra";
+const char GRADE = 'C';
+const short int AGE = 17;
+const float GPA = 4.0;
+
+bool active = false;
 
 int main(void){
 
-    printf("Your Name is %s\n", name);
-    printf("Your Grade is %c\n", grade);
-    printf("Your Age is %d\n", age);
-    printf("Your GPA is %f", gpa);
+    printf("Active: %d\n", active);
+    printf("Your Name is %s\n", NAME);
+    printf("Your Grade is %c\n", GRADE);
+    printf("Your Age is %d\n", AGE);
+    printf("Your GPA is %0.1f", GPA);
 
 }
