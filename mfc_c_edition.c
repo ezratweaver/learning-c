@@ -9,11 +9,13 @@ volatile int keepRunning = 1;
 unsigned score = 0;
 
 void handleSignal(int signal) {
+    system("cls");
+    printf("Exiting Program....");
     if (signal == SIGINT)
         keepRunning = 0;
 }
 
-int main(void) {
+int main() {
     srand(time(NULL));
 
     signal(SIGINT, handleSignal);
@@ -26,16 +28,18 @@ int main(void) {
         unsigned useranswer;
         unsigned answer = number1 * number2;
 
-        printf("Score: %d\n\n  %2d\nx %2d\n====\n  ", score, number1, number2);
+        printf("Score: %u\n\n  %2u\nx %2u\n====\n  ", score, number1, number2);
         scanf("%u", &useranswer);
 
+        printf("User Answer: %d", useranswer);
         if (useranswer == answer) {
-            printf("\nCorrect! Answer: %d\n", answer);
+            printf("\nCorrect! Answer: %u\n", answer);
             score++;
             sleep(1.5);
         } else {
             printf("\nExpected Answer: %u | Received: %u\n", answer, useranswer);
-            sleep(2);
+            if (score > 0) {score--;}
+            sleep(2); 
         }
 
     }
