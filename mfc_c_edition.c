@@ -31,14 +31,17 @@ int main() {
         printf("Score: %u\n\n  %2u\nx %2u\n====\n  ", score, number1, number2);
         scanf("%u", &useranswer);
 
-        printf("User Answer: %d", useranswer);
         if (useranswer == answer) {
-            printf("\nCorrect! Answer: %u\n", answer);
             score++;
+            system("cls");
+            printf("Score: %u+\n\n  %2u\nx %2u\n====\n  ", score, number1, number2);
+            printf("\nCorrect! Answer: %u\n", answer);
             sleep(1.5);
         } else {
-            printf("\nExpected Answer: %u | Received: %u\n", answer, useranswer);
             if (score > 0) {score--;}
+            system("cls");
+            printf("Score: %u-\n\n  %2u\nx %2u\n====\n  ", score, number1, number2);
+            printf("\nExpected Answer: %u | Received: %u\n", answer, useranswer);
             sleep(2); 
         }
 
