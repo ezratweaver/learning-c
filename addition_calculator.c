@@ -1,9 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
 
 int x;
 int y;
 
+void signal_handler(int sig) {
+    if (sig == SIGINT) {
+        printf("\nCtrl+C detected. Exiting...\n");
+        exit(0);
+    }
+}
+
 int main(void){
+    signal(SIGINT, signal_handler);
 
     printf("Input first number: ");
     scanf("%d", &x);
